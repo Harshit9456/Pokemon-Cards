@@ -1,38 +1,209 @@
-.App {
-  text-align: center;
+/* @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:ital,wght@0,300;1,900&display=swap'); */
+
+* {
+  box-sizing: border-box;
+  /* background-image: url('https://www.google.com/imgres?imgurl=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F2737184.jpg&imgrefurl=https%3A%2F%2Fwallpaperaccess.com%2Fpokemon-ash&tbnid=q3ZUJDq7v1x7tM&vet=12ahUKEwicyK-H64n4AhXY_TgGHfHgDWMQMygAegUIARC6AQ..i&docid=HnNXFTMGgGH7AM&w=1920&h=1080&q=pokemon%20ash%20wallpaper%20for%20pc&ved=2ahUKEwicyK-H64n4AhXY_TgGHfHgDWMQMygAegUIARC6AQ'); */
+  /* background-color: rgba(0, 0, 0, 0.193) ; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  height: 70px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-end;
+  background-color: rgb(87, 79, 79);
+  /* position: fixed; */
+}
+
+.heading {
+  margin-right: 0rem;
+  font-family: 'Oswald', sans-serif;
   color: white;
+  cursor: none;
+  /* position: fixed; */
 }
 
-.App-link {
-  color: #61dafb;
+.card:hover {
+  transform: scale(1.09);
+  background: #262728;
+  color: rgba(34, 84, 176, 0.806);
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.img {
+  width: 10rem;
+  height: 10rem;
+  margin-top: 3rem;
+  border-radius: 200%;
+}
+
+.background {
+  background-color: #262728;
+}
+
+nav a {
+  margin-right: 50px;
+  color: rgb(87, 79, 79);
+  text-decoration: none;
+}
+
+.list-wrapper {
+  width: 90%;
+  margin: auto;
+}
+
+.list-wrapper .pokemon-item {
+  margin: 10px 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border: 2px solid coral;
+  padding: 10px;
+  border-radius: 7px;
+}
+
+.list-wrapper a {
+  color: black;
+  text-decoration: none;
+}
+
+.poke {
+  width: 90%;
+  margin: auto;
+}
+
+.pokemon-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pokemon-wrapper .item {
+  width: 30%;
+}
+
+.search-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  margin: 0.5rem;
+  padding: 0;
+  justify-content: left;
+}
+
+.pagination {
+  width: 500px;
+  display: flex;
+  margin: auto;
+  list-style: none;
+  justify-content: space-between;
+  padding: 0;
+  cursor: pointer;
+}
+.flex-box {
+  background-color: white;
+  width: 100px;
+  margin: 10px;
+  padding-bottom: 10px;
+  text-align: end;
+  line-height: 75px;
+  font-size: 20px;
+  padding: 100px;
+  display: flex;
+}
+
+.inner-data {
+  background-color: white;
+  width: 100px;
+  margin: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  /* line-height: 75px; */
+  font-size: 20px;
+  padding: 100px;
+  display: flex;
+}
+
+.button {
+  width: 15rem;
+  margin-left: 40rem;
+}
+
+.input-search {
+  width: 40%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
+
+.button {
+  cursor: alias;
+  font: inherit;
+  border: none;
+  background-color: #996b37;
+  color: white;
+  padding: 0.75rem 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.check-btn {
+  width: 5rem;
+  height: 2vh;
+  margin: 0rem;
+}
+
+.check-btn {
+  font-size: 150px;
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  background-color: #e22323;
+  color: white;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 0px;
+  font-weight: normal;
+}
+
+.button:hover,
+.button:active {
+  background-color: #2c0d00;
+}
+
+
+.example-button {
+  float: left;
+  width: 110%;
+  height: 4.5vh;
+  padding: 10px;
+  background: #1192a9;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
 }
