@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Carousel, CarouselItem } from "react-bootstrap";
 import _ from "lodash";
 import { GetPokemonList, GetPokemon } from "../actions/PokemonAction";
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../App.css";
-// import UsePagination from "../component/Pagination";
 
 const PokemonList = (props) => {
   const [search, setSearch] = useState("");
@@ -21,7 +21,6 @@ const PokemonList = (props) => {
   console.log(pokemonList)
 
   useEffect(() => {
-    // console.log(count);
   }, [count]);
 
   useEffect(() => {
@@ -33,7 +32,6 @@ const PokemonList = (props) => {
   }, [pokemonList.data]);
 
   React.useEffect(() => {
-    // dispatch(GetPokemon(pokemonName));
     FetchData(active);
   }, [active]);
 
@@ -43,7 +41,6 @@ const PokemonList = (props) => {
 
   const FetchData = (active) => {
     dispatch(GetPokemonList(active));
-    // const pokemonData =
   };
 
   const PokemonData = () => {
@@ -93,36 +90,19 @@ const PokemonList = (props) => {
     }
   }, [active, totalPages, count]);
 
-  // const ShowData = () => {
-  // if (!_.isEmpty(pokemonState.data[pokemonName])) {
-  //   const pokeData = pokemonState.data[pokemonName];
-  //   return (
-  //     <div className={"ui link cards"}>
-  //       <div className="card">
-  //         <div>
-  //           <h1>Sprites</h1>
-  //           <img src={pokeData.sprites.front_default} alt="" />
-  //           <img src={pokeData.sprites.back_default} alt="" />
-  //           <img src={pokeData.sprites.front_shiny} alt="" />
-  //           <img src={pokeData.sprites.back_shiny} alt="" />
-  //         </div>
-  //       </div>
-  //       </div>
-  //   );
-  // }
-
   const ShowData = () => {
     if (!_.isEmpty(pokemonList.detail)) {
-      // const pokeData = pokemonList.detail[pokemonName];
       return (
         <Row>
-          {pokemonList.detail.map((e1) => (
-              <Col className="card my-3 p-3 shadow " style={{width: "18rem", margin: "2.25rem", borderRadius: "2%", backgroundColor: "pink" }} xs={12} sm={12} md={4} lg={4} xl={3}>
-                <div>
+          {pokemonList.detail.map((e1) => {
+            return (
+              <>
+              <Col className="card my-3 p-3 shadow-5 " style={{width: "18rem", margin: "2.25rem", borderRadius: "4%",backgroundColor: JSON.stringify(e1.types).includes('poison') ? '#5CDB95' : JSON.stringify(e1.types).includes("flying") ? 'rgb(129, 186, 243)': JSON.stringify(e1.types).includes('fire') ? '#379683': JSON.stringify(e1.types).includes('water') ? 'rgb(70, 134, 148)': JSON.stringify(e1.types).includes('ground') ? '#ae8b6f' : JSON.stringify(e1.types).includes('bug') ? "#01903a" : JSON.stringify("fighting") ? "rgb(240, 193, 105)" : "pink", borderWidth: "10px", borderColor: "yellow" }} xs={12} sm={12} md={4} lg={4} xl={3}>
+                <div style={{ color: "white" }}>  
                   {e1.types.map((t) => {
                     if( t.type.name === "fire" ) {
                       return (
-                      <p style={{ textAlign: "right", marginRight: "1rem" }}><img style={{ width: "10%" }} src="fire.png" alt="" />{t.type.name}</p>
+                      <p style={{ textAlign: "right", marginRight: "1rem" }}><img style={{ width: "18%" }} src="fire.png" alt="" />{t.type.name}</p>
                     )};
                     if(t.type.name== "grass") {
                       return (
@@ -141,7 +121,7 @@ const PokemonList = (props) => {
                     }
                     if(t.type.name ==="water") {
                       return(
-                        <p style={{ textAlign: "right", marginRight: "1rem" }}><img style={{ width: "10%" }} src="water.png" alt="" />{t.type.name}</p>
+                        <p  style={{ textAlign: "right", marginRight: "1rem" }}><img  style={{ width: "10%" }} src="water.png" alt="" />{t.type.name}</p>
                       )
                     }
                     if(t.type.name ==="bug") {
@@ -180,9 +160,23 @@ const PokemonList = (props) => {
                       )
                     }
                   })}
-                  <h1 style={{ fontSize: "15px" }} ><b>{e1.name.toUpperCase(0)}</b></h1> 
-                  <img className="card-img-top" style={{ padding: "0px 0px 0px 0px", width: "250px", height: "150px", backgroundColor: "#ffe600", borderRadius: "2%" }} src={e1.sprites.front_default} alt="Card image cap" />
-                  <p style={{ marginRight: "1rem" }} >height: {e1.height}  </p><p style={{ marginLeft: "10.25rem", marginTop: "-1.5rem" }}> weight: {e1.weight} </p> 
+                  <h1 style={{ fontSize: "15px", marginTop: "-1.5rem" }} ><b>{e1.name.toUpperCase(0)}</b></h1> 
+                  <Carousel>
+                    <Carousel.Item>
+                    <img className="card-img-top" style={{ padding: "0px 0px 0px 0px", width: "240px", height: "150px", backgroundColor: "rgb(255, 241, 132)", borderRadius: "5%" }} src={e1.sprites.front_default} alt="Card image cap" />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                    <img className="card-img-top" style={{ padding: "0px 0px 0px 0px", width: "240px", height: "150px", backgroundColor: "rgb(255, 241, 132)", borderRadius: "5%" }} src={e1.sprites.back_default} alt="Card image cap" />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                    <img className="card-img-top" style={{ padding: "0px 0px 0px 0px", width: "240px", height: "150px", backgroundColor: "rgb(255, 241, 132)", borderRadius: "5%" }} src={e1.sprites.front_shiny} alt="Card image cap" />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                    <img className="card-img-top" style={{ padding: "0px 0px 0px 0px", width: "240px", height: "150px", backgroundColor: "rgb(255, 241, 132)", borderRadius: "5%" }} src={e1.sprites.back_shiny} alt="Card image cap" />
+                    </Carousel.Item>
+                  </Carousel>
+                  <p style={{ marginRight: "1rem" }} >height: {e1.height}  </p><p style={{ marginLeft: "9rem", marginTop: "-1.5rem" }}> weight: {e1.weight} </p> 
+                  <hr style={{color: "black", height: "0.2vh"}} ></hr>
                   <p><b>Species:</b> {e1.species.name}</p>
                    <p><b>Stats:</b></p>
                   {e1.stats.map((s) => {
@@ -198,8 +192,9 @@ const PokemonList = (props) => {
                       )
                     })}
               </Col>
-           
-          ))}
+              </>
+            )
+                  })}
         </Row>
       );
     }

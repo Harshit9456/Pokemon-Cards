@@ -3,7 +3,7 @@ import "./App.css";
 import { Switch, Route, NavLink, Redirect } from "react-router-dom";
 import PokemonList from "./containers/PokemonList";
 import Pokemon from "./containers/Pokemon";
-import CartIcon from "./containers/CartIcon";
+// import CartIcon from "./containers/CartIcon";
 // import usePagination from "./component/Pagination";
 
 function App() {
