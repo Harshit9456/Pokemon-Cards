@@ -23,16 +23,16 @@ nav {
 
 .heading {
   margin-right: 0rem;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   color: white;
   cursor: none;
   /* position: fixed; */
 }
 
 .card:hover {
-  transform: scale(1.09);
+  transform: scale(1.05);
   background: #262728;
-  color: rgba(34, 84, 176, 0.806);
+  color: black;
   cursor: pointer;
 }
 
@@ -44,9 +44,9 @@ nav {
 }
 
 .background {
-  background-color: #262728;
+  background-color: #282826;
 }
-
+/* #262728 */
 nav a {
   margin-right: 50px;
   color: rgb(87, 79, 79);
@@ -149,7 +149,7 @@ nav a {
   border-radius: 4px;
   font-size: 16px;
   background-color: white;
-  background-position: 10px 10px; 
+  background-position: 10px 10px;
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
 }
@@ -194,7 +194,6 @@ nav a {
   background-color: #2c0d00;
 }
 
-
 .example-button {
   float: left;
   width: 110%;
@@ -206,4 +205,31 @@ nav a {
   border: 1px solid grey;
   border-left: none;
   cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
 }

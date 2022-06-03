@@ -117,26 +117,81 @@ const PokemonList = (props) => {
       return (
         <Row>
           {pokemonList.detail.map((e1) => (
-              <Col className="card my-3 p-3 rounded shadow mb-5 bg-white" style={{width: "18rem", margin: "2.25rem"}} xs={12} sm={12} md={4} lg={4} xl={3}>
+              <Col className="card my-3 p-3 shadow " style={{width: "18rem", margin: "2.25rem", borderRadius: "2%", backgroundColor: "pink" }} xs={12} sm={12} md={4} lg={4} xl={3}>
                 <div>
-                  <div>
-                    <img style={{ marginBottom: "-4rem", marginLeft: "5.25rem", borderRadius: "500%" }} src={e1.sprites.front_shiny} />
-                  </div>
                   {e1.types.map((t) => {
-                    return (
-                      <p style={{ textAlign: "right", marginRight: "1rem" }}>{t.type.name}</p>
-                    )
+                    if( t.type.name === "fire" ) {
+                      return (
+                      <p style={{ textAlign: "right", marginRight: "1rem" }}><img style={{ width: "10%" }} src="fire.png" alt="" />{t.type.name}</p>
+                    )};
+                    if(t.type.name== "grass") {
+                      return (
+                        <p style={{ textAlign: "right", marginRight: "1rem" }}><img style={{ width: "10%" }} src="grass.png" alt="" />{t.type.name}</p>
+                      )
+                    }
+                    if(t.type.name ==="flying") {
+                      return(
+                        <p style={{ textAlign: "right", marginRight: "1rem" }}><img style={{ width: "10%" }} src="flying.png" alt="" />{t.type.name}</p>
+                      )
+                    }
+                    if(t.type.name ==="poison") {
+                      return(
+                        <p style={{ textAlign: "right", marginRight: "1rem" }}><img style={{ width: "12%" }} src="poisionn.png" alt="" />{t.type.name}</p>
+                      )
+                    }
+                    if(t.type.name ==="water") {
+                      return(
+                        <p style={{ textAlign: "right", marginRight: "1rem" }}><img style={{ width: "10%" }} src="water.png" alt="" />{t.type.name}</p>
+                      )
+                    }
+                    if(t.type.name ==="bug") {
+                      return(
+                        <p style={{ textAlign: "right", marginRight: "1rem" }}><img style={{ width: "10%" }} src="bug.png" alt="" />{t.type.name}</p>
+                      )
+                    }
+                    if(t.type.name ==="electric") {
+                      return(
+                        <p style={{ textAlign: "right", marginRight: "1rem" }}><img style={{ width: "10%" }} src="electric.png" alt="" />{t.type.name}</p>
+                      )
+                    }
+                    if(t.type.name ==="normal") {
+                      return(
+                        <p style={{ textAlign: "right", marginRight: "1rem" }}>{t.type.name}</p>
+                      )
+                    }
+                    if(t.type.name ==="ground") {
+                      return(
+                        <p style={{ textAlign: "right", marginRight: "1rem" }}><img style={{ width: "10%" }} src="ground.jpeg" alt="" />{t.type.name}</p>
+                      )
+                    }
+                    if(t.type.name ==="fairy") {
+                      return(
+                        <p style={{ textAlign: "right", marginRight: "1rem" }}><img style={{ width: "10%" }} src="fairy.png" alt="" />{t.type.name}</p>
+                      )
+                    }
+                    if(t.type.name ==="fighting") {
+                      return(
+                        <p style={{ textAlign: "right", marginRight: "1rem" }}><img style={{ width: "15%" }} src="fighting.png" alt="" />{t.type.name}</p>
+                      )
+                    }
+                    if(t.type.name ==="psychic") {
+                      return(
+                        <p style={{ textAlign: "right", marginRight: "1rem" }}><img style={{ width: "15%" }} src="psychic.png" alt="" />{t.type.name}</p>
+                      )
+                    }
                   })}
                   <h1 style={{ fontSize: "15px" }} ><b>{e1.name.toUpperCase(0)}</b></h1> 
-                  <img className="card-img-top" style={{ padding: "0px 0px 0px 0px", width: "250px", height: "150px", backgroundColor: "#101778" }} src={e1.sprites.front_default} alt="Card image cap" />
-                  <p style={{ textAlign: "center" }} >height: {e1.height} || weight: {e1.weight} </p> 
-                  <p><b>{e1.species.name}</b></p>
+                  <img className="card-img-top" style={{ padding: "0px 0px 0px 0px", width: "250px", height: "150px", backgroundColor: "#ffe600", borderRadius: "2%" }} src={e1.sprites.front_default} alt="Card image cap" />
+                  <p style={{ marginRight: "1rem" }} >height: {e1.height}  </p><p style={{ marginLeft: "10.25rem", marginTop: "-1.5rem" }}> weight: {e1.weight} </p> 
+                  <p><b>Species:</b> {e1.species.name}</p>
+                   <p><b>Stats:</b></p>
                   {e1.stats.map((s) => {
                     return(
-                      <p>{s.stat.name.toUpperCase(1)}</p>
+                      <li>{s.stat.name.toUpperCase(1)}</li>
                     )
                   })}
                   </div>
+                  <p style={{ textAlign: "right", marginRight: "7rem", marginBottom: "-2rem" }}><b>Abilities:</b></p>
                   {e1.abilities.map((a) => {
                       return (
                         <p style={{ textAlign: "right", marginBottom: "-0.5rem" }}>{a.ability.name}</p>
@@ -162,7 +217,7 @@ const PokemonList = (props) => {
 
   return (
     <>
-    <div className="background" style={{  backgroundImage: `url(${process.env.PUBLIC_URL + '/Ash.webp'})`, backgroundPosition: "sticky"  }} >
+    <div className="background" >
       <div>
         <div className={"search-wrapper"}>
           <input
@@ -180,8 +235,6 @@ const PokemonList = (props) => {
             </button>
           </div>
         </div>
-        
-
         {ShowData()}
       </div>
       <div className="pagination">
