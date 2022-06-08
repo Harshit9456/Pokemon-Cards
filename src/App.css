@@ -17,7 +17,7 @@ nav {
   height: 70px;
   align-items: center;
   justify-content: flex-end;
-  background-color: rgb(87, 79, 79);
+  background-color: rgb(252, 146, 53);
   /* position: fixed; */
 }
 
@@ -44,7 +44,7 @@ nav {
 }
 
 .background {
-  background-color: #282826;
+  background-color: rgb(210 236 250);
 }
 /* #262728 */
 nav a {
@@ -207,29 +207,24 @@ nav a {
   cursor: pointer;
 }
 
-.mySlides {
-  display: none;
+.bg {
+  /* The image used */
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA66pp43Swzdrcmj5SgG2OOgWJiVL-s46lKD5f6VY9QsCiGiaY_zOI-GjgpwVNNKm4njE&usqp=CAU");
+
+  /* Half height */
+  height: 50%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
+.bgclr {
+  
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb63oO3se_eYieja9LKBvqsGUL3S4GdkOcmRW5YNkz1ViZFhMq5Jkil-ytIbH2OEeZy-4&usqp=CAU");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
